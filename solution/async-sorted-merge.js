@@ -27,7 +27,7 @@ module.exports = (logSources, printer) => {
         pq.add({...list[i], idx: i});
     }
 
-   
+   console.log(pq)
     while (!pq.isEmpty()) {
       let topLog = pq.poll();
       
@@ -46,6 +46,10 @@ module.exports = (logSources, printer) => {
     resolve(console.log("Async sort complete."));
   });
 };
+
+
+
+
 
 
 

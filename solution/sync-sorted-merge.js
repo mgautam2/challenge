@@ -11,28 +11,28 @@ function comp(v1, v2) {
 module.exports = (logSources, printer) => {
   const pq = new FastPriorityQueue(comp);
   
-  for (let i = 0; i < logSources.length; i++) {
-    let log = logSources[i].pop();
+  // for (let i = 0; i < logSources.length; i++) {
+  //   let log = logSources[i].pop();
     
-    if(log)
-      pq.add({...log, sourceIdx: i});
-  }
+  //   if(log)
+  //     pq.add({...log, sourceIdx: i});
+  // }
 
-  while (!pq.isEmpty()) {
-    let topLog = pq.poll();
+  // while (!pq.isEmpty()) {
+  //   let topLog = pq.poll();
     
-    printer.print(topLog)
+  //   printer.print(topLog)
 
-    let sourceIdx = topLog.sourceIdx;
-    let nextLog = logSources[sourceIdx].pop();
+  //   let sourceIdx = topLog.sourceIdx;
+  //   let nextLog = logSources[sourceIdx].pop();
 
-    if(!nextLog)   // Source is drained
-      continue;
+  //   if(!nextLog)   // Source is drained
+  //     continue;
     
-    pq.add({...nextLog, sourceIdx: sourceIdx}); 
-  } 
+  //   pq.add({...nextLog, sourceIdx: sourceIdx}); 
+  // } 
 
-  printer.done()
+  // printer.done()
 
   return console.log("Sync sort complete.");
 };
